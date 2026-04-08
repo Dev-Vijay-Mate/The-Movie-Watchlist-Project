@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="hero-heading">
+            <h1>🎬 <span class="hero-title-light">MOVIE</span> <span class="hero-title-accent">FINDER</span></h1>
+            <p>Search for any movie and build your personal watchlist</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a movie... eg. spider-man">
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="controls">
+            <select id="filterType">
+                <option value="all">All Types</option>
+                <option value="movie">Movies</option>
+                <option value="series">Series</option>
+            </select>
+            <select id="sortOrder">
+                <option value="default">Sort</option>
+                <option value="az">A → Z</option>
+                <option value="za">Z → A</option>
+            </select>
+            <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <div class="main-section">
+            <div id="startPrompt" class="start-prompt">
+                <div class="prompt-icon">🔍</div>
+                <h2>Search for a Movie</h2>
+                <p>Type a movie name above and hit Search</p>
+            </div>
+            <div id="loadingMsg" class="hidden">Loading...</div>
+            <div id="noResults" class="hidden">No movies found. Try a different search.</div>
+            <div id="movieGrid"></div>
+        </div>
+
+        <aside class="sidebar">
+            <h2>My Watchlist</h2>
+            <button id="randomBtn">🎲 Random Movie Night</button>
+            <div id="emptyMsg">Your watchlist is empty.</div>
+            <div id="watchlistContainer"></div>
+        </aside>
+
+    </div>
+
+    <div id="detailsModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
